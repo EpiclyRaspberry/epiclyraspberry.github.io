@@ -10,6 +10,9 @@
                 
             }
             a {
+                max-width: 100px;
+                
+                display: block;
                 background: darkblue;
                 color: white;
                 margin-top: 10px;
@@ -53,6 +56,28 @@
             }
 .inline{
     display: inline;
+}
+ul.profile{
+    align-content: center;
+    list-style-type: none;
+    overflow: hidden;
+}
+.horiz{
+display: inline;
+position: relative;
+top:-20px;
+right:30px;
+    margin-top: px;
+    float: left;
+}
+.img {
+    display: block;
+    
+    width: 20px;
+    
+    
+    
+    /*ackground: #8098ff;*/
 }
 /* Dropdown Button */
 
