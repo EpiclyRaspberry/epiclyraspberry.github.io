@@ -45,39 +45,38 @@ summary:after {
 details[open] summary:after {
   content: "-";
 }
-.navbar {
-    text-align: left;
+
+.topnav img{
+    width: 30px;
+    height: 30px;
+    display: inline;
+}
+.topnav li {
+    
+    display: inline;
+    margin: 5px;
+}
+.topnav {
+    list-style-type: none;
+    width: 100vw;
     background: #444;
-    padding: 10px;
-    font-size: 1.5rem;
     border-radius: 50px;
+    padding: 10px;
     
 }
-.navbar a {
+.topnav a {
+    display: inline;
     text-decoration: none;
-    background: #666;
     border-radius: 30px;
+    background: #666;
     padding: 5px;
+    font-size: 2rem;
     color: white;
-    transition: all 0.3s ease-in-out;
+    transition: 0.2s;
 }
-
-a.actsel {
+.topnav a.active {
     background: #aaa;
 }
-
-.navbar a:hover {
-    transform: scale(1.5);
+.topnav a:hover {
     background: #aaa;
 }
-.navbar.links {
-    position: relative;
-    float: right;
-}
-img {
-    width: 5vh;
-    height: 5vh;
-    
-}
-
-
