@@ -1,3 +1,3 @@
-try {spabn=document.getElementById("testspan")
-spabn.innerText=window.screen.width.toString()
-}catch {}
+if (window.location.protocol == "http:"){
+    window.location.protocol = "https:";
+}
