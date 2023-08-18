@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 html, body {
-    background: #716aff;
+    background: #6697e2;
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
 .centerr {
     text-align: center;
+}
+
+a {
+    color:navy;
+    text-decoration: none;
 }
