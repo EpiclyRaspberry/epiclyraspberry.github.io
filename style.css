@@ -14,3 +14,7 @@ a {
     color:navy;
     text-decoration: none;
 }
+a:hover {
+    color:navy;
+    text-decoration: underline;
+}
