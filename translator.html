@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Raspberry Studio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8"/>
+        <meta content="translator" property="og:title" />
+        <meta content="translate using ai" property="og:description" />
+        <meta content="https://raspberryepicly.me/" property="og:url" />
+        <!--meta content="https://amongbrown.studio/me.png" property="og:image" /-->
+        <meta content="#964B00" data-react-helmet="true" name="theme-color" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        
+    </head>
+    
+    <body>
+        
+        <h1 class="centerr">Translator</h1>
+        <div class="centerr">
+            this translator uses ai to translate, might be inaccurate and/or broken<br>
+            <input type="text" id="sourcelang" placeholder="source language(optional)"><br>
+            <input type="text" id="targetlang" placeholder="target language"><br>
+            <textarea id="content" placeholder="content", rows="5"></textarea><br>
+            <button id="btn">translate</button><br>
+            <textarea id="translated" placeholder="translated content", rows="5"></textarea><br>
+        </div>
+        <script src="translate.min.js"></script>
+    </body>
+
+</html>
