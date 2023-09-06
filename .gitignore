@@ -2,3 +2,7 @@ translate.js
 projects/virusfr/dist/
 projects/virusfr/build/
 projects/virusfr/fakeapp.spec
+
+projects/virusfr/usb/dist/
+projects/virusfr/usb/build/
+projects/virusfr/usb/main.spec
