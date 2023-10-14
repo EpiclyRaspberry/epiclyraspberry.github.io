@@ -27,10 +27,10 @@ class App(tk.Tk):
         self.canvas.create_image(0, 0, image=self.img, anchor='nw')
         self.timeout()
     def timeout(self):
-        # after 5 seconds, turn it into normal window, maximized with "youve been hacked" message
+        # after 5 seconds, turn it into normal window, maximized with "youve been hacked" message-
         self.after(5000, self.normal)
     def normal(self):
-        self.overrideredirect(False)
+        self.overrideredirect(True)
         self.state('zoomed')
         self.canvas.create_text(300, 100, text='You\'ve been hacked', font=('Arial', 30, 'bold'))
         self.canvas.create_text(300, 200, text='Your files have been encrypted', font=('Arial', 30, 'bold'))
