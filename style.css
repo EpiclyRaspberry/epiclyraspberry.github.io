@@ -18,3 +18,34 @@ a:hover {
     color:navy;
     text-decoration: underline;
 }
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.homeicon {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    border: solid 1px navy;
+    border-radius: 500%;
+    background: transparent;
+    cursor: pointer;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    background: #6697e2;
+    color: white;
+    /* 3px black line on top only*/
+    border-top: 3px solid rgb(0, 0, 0);
+    background-color: rgba(0,0,0,0.4);
+}
+footer>a {
+    color: rgb(216, 216, 255);
+}
