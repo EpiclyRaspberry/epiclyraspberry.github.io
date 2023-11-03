@@ -6,7 +6,10 @@ html, body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     background-image: url("bg.jpg");
-    background-size: cover;
+    background-size: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 .centerr {
     text-align: center;
