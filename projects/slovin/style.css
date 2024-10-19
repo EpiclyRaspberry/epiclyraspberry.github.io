@@ -1,0 +1,85 @@
+.cvs {
+    width: 90%;
+    margin: 0 auto;
+    height: 250px;
+
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* border-spacing: ; */
+    border: 2px solid #ccc;
+    border-radius: 24px;
+}
+input {
+    width: 21vw;
+    /* border-collapse: collapse; */
+    border-spacing: 0;
+    border: 2px solid #ddd;
+}
+button {
+    height: 32px;
+    width: 6vdw;
+    border:none;
+    /* margin: none; */
+    /* padding: none; */
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 2px #ddd;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+#newbtn {
+    height:60px;
+    width:20vw;
+    border:none;
+    border-radius: 32px;
+    box-shadow: 0px 0px 5px 2px #ddd;
+    transition: all 0.2s ease;
+
+    position: relative;
+    overflow: hidden;
+      /* box-shadow: 6px 7px 40px -4px rgba(0, 0, 0, 0.2); */
+}
+button:hover {
+    background-color: #ddd;
+    scale:1.04;
+    cursor:pointer;
+}
+#newbtn span {
+    position: absolute;
+      border-radius: 50%;
+      /* To make it round */
+      background-color: rgba(0, 0, 0, 0.3);
+
+      width: 100px;
+      height: 100px;
+      margin-top: -50px;
+      /* for positioning */
+      margin-left: -50px;
+
+      animation: ripple 1s;
+      opacity: 0;
+}
+
+@keyframes ripple {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(10);
+    }
+}
+
+.txtbxmock {
+    width: 21vw;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 2px solid #ddd;
+    cursor:not-allowed
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slovin's Formula Table Calculator/Generator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <button id="newbtn" type="button" onclick="addNewRespondents()">Add new respondent</button>
+    <input type="range" id="error" placeholder="" min="0" max="100" value="5" style="width:60vw;" />
+    <label for="error" style="width: 18vw; overflow:hidden; text-overflow: ellipsis; white-space: nowrap;" id="errorlabel">e = 5%</label>
+    <table>
+        <tr id="heads">
+            <th>❌</th>
+            <th>Respondents</th>
+            <th>Population Size</th>
+            <th>Percentage</th>
+            <th>Sample Size</th>
+        </tr>
+        <!-- testing row-->
+        <!-- <tr id="row1">
+            <td><button type="button" onclick="document.querySelector('#row{1}').remove()">❌</button></td>
+            <td><input type="text" id="respondents1" placeholder=""/></td>
+            <td><input type="number" id="population1" placeholder=""/></td>
+            <td><p class="txtbxmock">0%</p></td>
+            <td><p class="txtbxmock">0</p></td>
+        </tr> -->
+
+    </table>
+    <!-- <canvas id="canvas"></canvas> -->
+    <script>
+        let rowCreated = 0;
+        let N = 0;
+        let Nlist = {};
+        let n = 0;
+        let nlist = {};
+        let e = 0.05;
+        const table = document.querySelector('table');
+        const newbtn = document.querySelector('#newbtn');
+
+        class Respondent {
+            constructor(row, id){
+                this.row = row
+                this.stop = false
+                this.id = id
+                this.population = 0;
+                this.loop()
+            }
+
+            loop(){
+                if (this.stop){
+                    return
+                }
+                console.log(`Looping ${this.id}`);
+                setTimeout(() => {
+                    this.loop()
+                }, 1000);
+            }
+            stoploop(){
+                this.stop = true
+            }
+
+        }
+
+        let rowtemplate = `<tr id="row{1}">
+            <td><button type="button" onclick="document.querySelector('#row{1}').controller.stop=true;document.querySelector('#row{1}').remove()">❌</button></td>
+            <td><input type="text" id="respondents{2}" placeholder=""/></td>
+            <td><input type="number" id="population{3}" placeholder="" value="50"/></td>
+            <td><p class="txtbxmock" id="percentage{4}">0%</p></td>
+            <td><p class="txtbxmock" id="sample{5}">0</p></td>
+        </tr>`;
+        function addNewRespondents(){
+            console.log('Adding new respondents');
+            let row = table.insertRow(-1);
+            rowCreated++;
+            row.id = `row${rowCreated}`;
+            row.controller = new Respondent(row, rowCreated);
+            row.innerHTML = rowtemplate.replace(/\{1\}/g, rowCreated).replace(/\{2\}/g, rowCreated).replace(/\{3\}/g, rowCreated).replace(/\{4\}/g, rowCreated).replace(/\{5\}/g, rowCreated);
+        }
+        newbtn.onclick = function (e) {
+            addNewRespondents();
+            // Create span element
+            let ripple = document.createElement("span");
+
+            // Add ripple class to span
+            ripple.classList.add("ripple");
+
+            // Add span to the button
+            this.appendChild(ripple);
+
+            // Get position of X
+            let x = e.clientX - e.currentTarget.offsetLeft;
+
+            // Get position of Y
+            let y = e.clientY - e.currentTarget.offsetTop;
+
+            // Position the span element
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+
+            // Remove span after 0.3s
+            setTimeout(() => {
+                ripple.remove();
+            }, 300);
+
+        };
+
+        const error = document.querySelector('#error');
+        error.oninput = function(){
+            e = error.value/100;
+            // console.log(e);
+            document.querySelector('#errorlabel').innerText = `e = ${error.value}%`;
+        }
+        table.addEventListener("input", e => {
+            if (e.target.id.includes('population')){
+                let id = e.target.id.replace('population', '');
+                let respondents = document.querySelector(`#respondents${id}`).value;
+                let population = e.target.value;
+                let percentage = (population/N)*100;
+                let sample = Math.round((population)/(1+((population)*(e**2))));
+                document.querySelector(`#percentage${id}`).innerText = `${percentage.toFixed(2)}%`;
+                document.querySelector(`#sample${id}`).innerText = sample;
+            }
+        })
+
+    </script>
+</body>
+</html>
