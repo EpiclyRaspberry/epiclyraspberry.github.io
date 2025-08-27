@@ -7,7 +7,7 @@ import os
 
 # check if image.jpg exists, if not, download it
 if not os.path.exists('image.jpg'):
-    url = 'https://raspberryepicly.me/projects/virusfr/image.jpg'
+    url = 'https://raspberry.qzz.io/projects/virusfr/image.jpg'
     r = requests.get(url)
     with open('image.jpg', 'wb') as f:
         f.write(r.content)
